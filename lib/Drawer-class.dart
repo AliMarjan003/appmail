@@ -38,7 +38,6 @@ class _DrawerclassState extends State<Drawerclass> {
             title: Text("Setting"),
             trailing: Icon(Icons.arrow_forward_outlined),
           ),
-
         ],
       ),),
     );
