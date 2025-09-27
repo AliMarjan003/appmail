@@ -56,19 +56,26 @@ class _ExpadedClassState extends State<ExpadedClass> {
            )
         :select==2? ListView.builder(
               itemCount: 20,
+              scrollDirection: Axis.horizontal,
               itemBuilder: (context,index)
               {
-                return Container(
-                  height: 190,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.blueAccent
-                  ),
-                  child: Column(
-                    children: [
-                      CircleAvatar()
-                    ],
+                return Padding(
+                  padding: const EdgeInsets.only(right: 10,bottom: 300,top: 10),
+                  child: Container(
+                    width: 120,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.blueAccent
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CircleAvatar()
+                        ],
+                      ),
+                    ),
                   ),
                 );
               },
