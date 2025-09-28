@@ -32,12 +32,12 @@ class _ExpadedClassState extends State<ExpadedClass> {
             padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 1),
             child: TextFormField(
               decoration: InputDecoration(
+                icon: Icon(Icons.search),
                 border:InputBorder.none,
                 hintText: "Ask Meta AI or Search",
               ),
             ),
           ),
-
         ),
         Expanded(
             flex: 90,

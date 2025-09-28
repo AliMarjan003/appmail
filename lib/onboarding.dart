@@ -13,7 +13,7 @@ class _OnboardingState extends State<Onboarding> {
     return Scaffold(
       body: PageView(
         children: [
-          Column(children: [
+          Column(children:[
             CircleAvatar(),
             Text('Screen-1--Bold text'),
             Text('Screen-1--normal grey color text'),
