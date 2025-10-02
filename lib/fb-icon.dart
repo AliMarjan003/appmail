@@ -60,7 +60,27 @@ class _FbHomeIocnState extends State<FbHomeIocn> {
                     ),
                 ],
               ),
-            ],
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      isSelected = 3;
+                    });
+                  },
+                  icon: Icon(
+                    Icons.notifications,
+                    color: isSelected == 3 ? Colors.blueAccent : Colors.black,
+                  ),
+                ),
+                if (isSelected == 3)
+                  Container(
+                    height: 3,
+                    width: 20,
+                    color: Colors.blueAccent,
+                  ),
+              ],
+            ),]
           ),
           Expanded(
             child: isSelected == 1
@@ -119,14 +139,50 @@ class _FbHomeIocnState extends State<FbHomeIocn> {
                 ),
               ],
             )
-                : ListView.builder(
+                :isSelected==2? ListView.builder(
               itemCount: 10, // Added itemCount for demonstration
               itemBuilder: (context, index) {
-                return Container(
-                  height: 100,
-                  margin: EdgeInsets.all(8),
-                  color: Colors.grey[300],
-                  child: Center(child: Text('Video Item ')),
+                return Column(
+                  children: [
+                    ListTile(
+                      leading: CircleAvatar(),
+                      title: Text("data"),
+                      subtitle: Text("data"),
+                      trailing: Icon(Icons.more_horiz),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 250,
+                        width: double.infinity,
+                        color: Colors.blueAccent,
+                      ),
+                    )
+                  ],
+                );
+              },
+            )
+                :isSelected == 3
+                ? ListView.builder(
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: CircleAvatar(),
+                  title: Text('Notification $index'),
+                  subtitle: Text('New update at ${DateTime.now()}'),
+                  trailing: Icon(Icons.check_circle),
+                );
+              },
+            )
+                : ListView.builder(
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text('Menu Option $index'),
+                  onTap: () {
+                    // Handle menu item tap
+                  },
                 );
               },
             ),
