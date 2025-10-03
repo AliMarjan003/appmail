@@ -8,15 +8,60 @@ class Onboarding extends StatefulWidget {
 }
 
 class _OnboardingState extends State<Onboarding> {
+  PageController pageController=PageController();
+  int index=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton:
+      index!=3?  InkWell(
+        onTap: (){},
+        child: Container(
+          height: 40,
+          margin: EdgeInsets.only(left: 30),
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.blueAccent,
+            borderRadius: BorderRadius.circular(10)
+          ),
+          child: Center(child: Text('Next',style: TextStyle(color: Colors.white),),),
+        ),
+      ):
+      InkWell(
+        onTap: (){
+
+        },
+        child: Container(
+          height: 40,
+          margin: EdgeInsets.only(left: 30),
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.blueAccent,
+            borderRadius: BorderRadius.circular(10)
+          ),
+          child: Center(child: Text('Get Started',style: TextStyle(color: Colors.white),),),
+        ),
+      ),
       body: PageView(
+        controller: pageController,
+        onPageChanged: (value){
+          index=value;
+          setState(() {
+
+          });
+        },
         children: [
           Column(children:[
-            CircleAvatar(),
-            Text('Screen-1--Bold text'),
-            Text('Screen-1--normal grey color text'),
+            Center(
+              child: Container(
+                margin: EdgeInsets.only(top: 80),
+                height: 250,
+                width: 200,
+               decoration: BoxDecoration(color: Colors.blueAccent,image: DecorationImage(image: AssetImage("assets/Part-3B.jpg"))),
+              ),
+            ),
+            SizedBox(height: 20,),
+            Center(child: Text("Search Your Location",style: TextStyle(fontSize: 30,color: Colors.grey[700]),),)
           ],),
           Text('Screen-2'),
           Text('Screen-3'),
