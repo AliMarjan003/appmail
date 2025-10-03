@@ -13,6 +13,17 @@ class _OnboardingState extends State<Onboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        actions: [
+          Text("Skip"),
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: Icon(Icons.double_arrow),
+          ),
+        ],
+      ),
+      backgroundColor: Colors.white,
       floatingActionButton:
       index!=3?  InkWell(
         onTap: (){},
@@ -54,18 +65,56 @@ class _OnboardingState extends State<Onboarding> {
           Column(children:[
             Center(
               child: Container(
-                margin: EdgeInsets.only(top: 80),
-                height: 250,
-                width: 200,
-               decoration: BoxDecoration(color: Colors.blueAccent,image: DecorationImage(image: AssetImage("assets/Part-3B.jpg"))),
+                margin: EdgeInsets.only(top: 50),
+                height: 220,
+                width: 230,
+               decoration: BoxDecoration(color: Colors.white,image: DecorationImage(image: AssetImage("assets/Part-3B.jpg"),fit: BoxFit.cover)),
               ),
             ),
             SizedBox(height: 20,),
-            Center(child: Text("Search Your Location",style: TextStyle(fontSize: 30,color: Colors.grey[700]),),)
+            Center(child: Text("Search Your Location",style: TextStyle(fontSize: 30,color: Colors.grey[600]),),),
           ],),
-          Text('Screen-2'),
-          Text('Screen-3'),
-          Text('Screen-4'),
+          Column(
+            children: [
+              Center(
+                child: Container(
+                  margin: EdgeInsets.only(top: 50),
+                  height: 220,
+                  width: 230,
+                  decoration: BoxDecoration(color: Colors.white,
+                  image: DecorationImage(image: AssetImage("assets/Part-3B-1.jpg"),fit: BoxFit.cover)),
+                ),
+              ),
+              SizedBox(height: 20,),
+              Center(child: Text("Make A Call",style: TextStyle(fontSize: 30,color: Colors.grey[600]),),)
+            ],
+          ),
+          Column(children: [
+            Center(child:
+              Container(
+                margin: EdgeInsets.only(top: 50),
+                height: 220,
+              width: 230,
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("assets/Part-3B-2.jpg"),fit: BoxFit.cover)
+                ),
+              ),),
+            SizedBox(height: 20,),
+            Center(child: Text("Add Missing Place",style: TextStyle(fontSize: 30,color: Colors.grey[600]),),)
+          ],),
+          Column(children: [
+            Center(child:
+            Container(
+              margin: EdgeInsets.only(top: 50),
+              height: 220,
+              width: 230,
+              decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("assets/Part-3B-3.jpg"),fit: BoxFit.cover)
+              ),
+            ),),
+            SizedBox(height: 20,),
+            Center(child: Text("Sit Back And Enjoy",style: TextStyle(fontSize: 30,color: Colors.grey[600]),),)
+          ],),
         ],
       ),
 
