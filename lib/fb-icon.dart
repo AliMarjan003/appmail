@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-
 class FbHomeIocn extends StatefulWidget {
   const FbHomeIocn({super.key});
-
   @override
   State<FbHomeIocn> createState() => _FbHomeIocnState();
 }
-
 class _FbHomeIocnState extends State<FbHomeIocn> {
   int isSelected = 1;
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
